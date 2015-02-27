@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		9425E86B19E5CD320056326D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425E86A19E5CD320056326D /* AppDelegate.swift */; };
-		9425E86D19E5CD320056326D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425E86C19E5CD320056326D /* ViewController.swift */; };
 		9425E87019E5CD320056326D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9425E86E19E5CD320056326D /* Main.storyboard */; };
 		9425E87219E5CD320056326D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9425E87119E5CD320056326D /* Images.xcassets */; };
 		9425E87519E5CD320056326D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9425E87319E5CD320056326D /* LaunchScreen.xib */; };
 		9425E88119E5CD330056326D /* SwiftManchuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425E88019E5CD330056326D /* SwiftManchuTests.swift */; };
+		94E7EE721AA1281600587D58 /* ManchuDict.SQLite in Resources */ = {isa = PBXBuildFile; fileRef = 94E7EE711AA1281600587D58 /* ManchuDict.SQLite */; };
+		94E7EE761AA12ADF00587D58 /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E7EE751AA12ADF00587D58 /* Candy.swift */; };
+		94E7EE781AA12BF200587D58 /* DictTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,17 +27,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		94E7EE731AA1287500587D58 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9425E86519E5CD320056326D /* SwiftManchu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftManchu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9425E86919E5CD320056326D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9425E86A19E5CD320056326D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9425E86C19E5CD320056326D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9425E86F19E5CD320056326D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9425E87119E5CD320056326D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9425E87419E5CD320056326D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9425E87A19E5CD330056326D /* SwiftManchuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftManchuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9425E87F19E5CD330056326D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9425E88019E5CD330056326D /* SwiftManchuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftManchuTests.swift; sourceTree = "<group>"; };
+		94E7EE711AA1281600587D58 /* ManchuDict.SQLite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ManchuDict.SQLite; sourceTree = "<group>"; };
+		94E7EE751AA12ADF00587D58 /* Candy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
+		94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +75,7 @@
 		9425E85C19E5CD320056326D = {
 			isa = PBXGroup;
 			children = (
+				94E7EE711AA1281600587D58 /* ManchuDict.SQLite */,
 				9425E86719E5CD320056326D /* SwiftManchu */,
 				9425E87D19E5CD330056326D /* SwiftManchuTests */,
 				9425E86619E5CD320056326D /* Products */,
@@ -78,11 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				9425E86A19E5CD320056326D /* AppDelegate.swift */,
-				9425E86C19E5CD320056326D /* ViewController.swift */,
+				94E7EE751AA12ADF00587D58 /* Candy.swift */,
 				9425E86E19E5CD320056326D /* Main.storyboard */,
 				9425E87119E5CD320056326D /* Images.xcassets */,
 				9425E87319E5CD320056326D /* LaunchScreen.xib */,
 				9425E86819E5CD320056326D /* Supporting Files */,
+				94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */,
 			);
 			path = SwiftManchu;
 			sourceTree = "<group>";
@@ -122,6 +140,7 @@
 				9425E86119E5CD320056326D /* Sources */,
 				9425E86219E5CD320056326D /* Frameworks */,
 				9425E86319E5CD320056326D /* Resources */,
+				94E7EE731AA1287500587D58 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -161,6 +180,7 @@
 				TargetAttributes = {
 					9425E86419E5CD320056326D = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 9G6ER3MR52;
 					};
 					9425E87919E5CD330056326D = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -193,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9425E87019E5CD320056326D /* Main.storyboard in Resources */,
+				94E7EE721AA1281600587D58 /* ManchuDict.SQLite in Resources */,
 				9425E87519E5CD320056326D /* LaunchScreen.xib in Resources */,
 				9425E87219E5CD320056326D /* Images.xcassets in Resources */,
 			);
@@ -212,8 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9425E86D19E5CD320056326D /* ViewController.swift in Sources */,
 				9425E86B19E5CD320056326D /* AppDelegate.swift in Sources */,
+				94E7EE761AA12ADF00587D58 /* Candy.swift in Sources */,
+				94E7EE781AA12BF200587D58 /* DictTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SwiftManchu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SwiftManchu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -407,6 +431,7 @@
 				9425E88619E5CD330056326D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9425E88719E5CD330056326D /* Build configuration list for PBXNativeTarget "SwiftManchuTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +440,7 @@
 				9425E88919E5CD330056326D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
