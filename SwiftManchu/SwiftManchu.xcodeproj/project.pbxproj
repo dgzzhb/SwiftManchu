@@ -14,6 +14,7 @@
 		9425E88119E5CD330056326D /* SwiftManchuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425E88019E5CD330056326D /* SwiftManchuTests.swift */; };
 		946A3BF31AA14C5900C94B80 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 946A3BEA1AA14C4200C94B80 /* SQLite.framework */; };
 		946A3BF41AA14C6000C94B80 /* SQLite.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 946A3BEA1AA14C4200C94B80 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		949B4BFD1AA16D7B00A21F0E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B4BFC1AA16D7B00A21F0E /* DetailViewController.swift */; };
 		94E7EE721AA1281600587D58 /* ManchuDict.SQLite in Resources */ = {isa = PBXBuildFile; fileRef = 94E7EE711AA1281600587D58 /* ManchuDict.SQLite */; };
 		94E7EE761AA12ADF00587D58 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E7EE751AA12ADF00587D58 /* Word.swift */; };
 		94E7EE781AA12BF200587D58 /* DictTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */; };
@@ -88,6 +89,7 @@
 		9425E87F19E5CD330056326D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9425E88019E5CD330056326D /* SwiftManchuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftManchuTests.swift; sourceTree = "<group>"; };
 		946A3BE11AA14C4100C94B80 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		949B4BFC1AA16D7B00A21F0E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		94E7EE711AA1281600587D58 /* ManchuDict.SQLite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ManchuDict.SQLite; sourceTree = "<group>"; };
 		94E7EE751AA12ADF00587D58 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictTableTableViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				946A3BE11AA14C4100C94B80 /* SQLite.xcodeproj */,
 				9425E86A19E5CD320056326D /* AppDelegate.swift */,
 				94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */,
+				949B4BFC1AA16D7B00A21F0E /* DetailViewController.swift */,
 				94E7EE751AA12ADF00587D58 /* Word.swift */,
 				9425E86E19E5CD320056326D /* Main.storyboard */,
 				9425E87119E5CD320056326D /* Images.xcassets */,
@@ -326,6 +329,7 @@
 				9425E86B19E5CD320056326D /* AppDelegate.swift in Sources */,
 				94E7EE761AA12ADF00587D58 /* Word.swift in Sources */,
 				94E7EE781AA12BF200587D58 /* DictTableTableViewController.swift in Sources */,
+				949B4BFD1AA16D7B00A21F0E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

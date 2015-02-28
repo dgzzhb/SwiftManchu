@@ -18,9 +18,9 @@ struct Word {
 }
 
 struct Sentence {
-    let id : Int
-    let mnc : String
-    let chn : String
-    let eng : String
+    let sentid : Int
+    let sentmnc : String
+    let sentchn : String
+    let senteng : String
     let wordid : Int
 }

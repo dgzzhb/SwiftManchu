@@ -10,14 +10,13 @@ import UIKit
 import SQLite
 
 class DictTableTableViewController : UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
-    var candies = [Word]()
-    var filteredCandies = [Word]()
+    var words = [Word]()
+    var filteredWords = [Word]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.candies = [Word(mnc:"manchu", chn:"满洲")]
-        self.candies = readAllWords()
+        self.words = readAllWords()
         
         // Reload the table
         self.tableView.reloadData()
@@ -32,7 +31,7 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
      // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -44,9 +43,9 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.searchDisplayController!.searchResultsTableView {
-            return self.filteredCandies.count
+            return self.filteredWords.count
         } else {
-            return self.candies.count
+            return self.words.count
         }
     }
 
@@ -56,11 +55,11 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
         let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
         
         var word : Word
-        // Check to see whether the normal table or search results table is being displayed and set the Candy object from the appropriate array
+        
         if tableView == self.searchDisplayController!.searchResultsTableView {
-            word = filteredCandies[indexPath.row]
+            word = filteredWords[indexPath.row]
         } else {
-            word = candies[indexPath.row]
+            word = words[indexPath.row]
         }
         
         // Configure the cell
@@ -69,11 +68,14 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
         
         return cell
     }
-    func filterContentForSearchText(searchText: String) {
-        // Filter the array using the filter method
-        self.filteredCandies = self.candies.filter({( word: Word) -> Bool in
-            let stringMatch = word.mnc.rangeOfString(searchText)
-            return (stringMatch != nil)
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        self.filteredWords = self.words.filter({( word : Word) -> Bool in
+            var mncMatch = word.mnc.rangeOfString(searchText)
+            // Pay - only content
+            // var chnMatch = word.chn.rangeOfString(searchText)
+            // var engMatch = word.eng.rangeOfString(searchText)
+            return (mncMatch != nil)//|| (chnMatch != nil) || (engMatch != nil)
         })
     }
     
@@ -82,10 +84,10 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
         return true
     }
     
-    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
-        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
-        return true
-    }
+//    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+//        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+//        return true
+//    }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("wordDetail", sender: tableView)
@@ -93,15 +95,29 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "wordDetail" {
-            let wordDetailViewController = segue.destinationViewController as UIViewController
+            let wordDetailViewController : DetailViewController = segue.destinationViewController as DetailViewController
             if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
                 let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
-                let destinationTitle = self.filteredCandies[indexPath.row].mnc
+                let destinationTitle = self.filteredWords[indexPath.row].mnc
+                let wordChn = self.filteredWords[indexPath.row].chn
+                let wordEng = self.filteredWords[indexPath.row].eng
+                let wordAttr = self.filteredWords[indexPath.row].attr
                 wordDetailViewController.title = destinationTitle
+                wordDetailViewController.mncText = destinationTitle
+                wordDetailViewController.chnText = wordChn
+                wordDetailViewController.engText = wordEng
+                wordDetailViewController.attrText = wordAttr
             } else {
                 let indexPath = self.tableView.indexPathForSelectedRow()!
-                let destinationTitle = self.candies[indexPath.row].mnc
+                let destinationTitle = self.words[indexPath.row].mnc
+                let wordChn = self.words[indexPath.row].chn
+                let wordEng = self.words[indexPath.row].eng
+                let wordAttr = self.words[indexPath.row].attr
                 wordDetailViewController.title = destinationTitle
+                wordDetailViewController.mncText = destinationTitle
+                wordDetailViewController.chnText = wordChn
+                wordDetailViewController.engText = wordEng
+                wordDetailViewController.attrText = wordAttr
             }
         }
     }
@@ -121,13 +137,20 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
         let attr = Expression<String>("attribute")
         
         for word in words {
+            //var sents : [Sentence]! = []
+            var wid = word[id]
             let tempWord = Word(id:word[id], mnc:word[mnc], chn:word[chn], eng:word[eng], attr:word[attr])
+            
+//            for sent in sentences.filter(wordid == wid) {
+//                let tempSent = Sentence(sentid:sent[sentid], sentmnc:sent[sentmnc], sentchn:sent[sentchn], senteng:sent[senteng], wordid:sent[wordid])
+//                sents.append(tempSent)
+//            }
+
             result.append(tempWord)
         }
         
         return result
-    }
-    
+    }    
     
     /*
     // Override to support conditional editing of the table view.
