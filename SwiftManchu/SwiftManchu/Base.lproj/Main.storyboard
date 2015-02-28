@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="BSx-Wc-DMJ">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for Word" id="BSx-Wc-DMJ">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" title="Manchu Dictionary" id="av7-Nf-J8T"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="8cF-cG-ubP" id="kdU-Nx-7pa"/>
-                        <segue destination="0KD-QX-9jA" kind="show" id="SuK-YK-UQA"/>
+                        <segue destination="0KD-QX-9jA" kind="show" identifier="wordDetail" id="SuK-YK-UQA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0WL-In-JeL" userLabel="First Responder" sceneMemberID="firstResponder"/>

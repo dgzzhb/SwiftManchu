@@ -13,7 +13,7 @@
 		9425E87519E5CD320056326D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9425E87319E5CD320056326D /* LaunchScreen.xib */; };
 		9425E88119E5CD330056326D /* SwiftManchuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425E88019E5CD330056326D /* SwiftManchuTests.swift */; };
 		94E7EE721AA1281600587D58 /* ManchuDict.SQLite in Resources */ = {isa = PBXBuildFile; fileRef = 94E7EE711AA1281600587D58 /* ManchuDict.SQLite */; };
-		94E7EE761AA12ADF00587D58 /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E7EE751AA12ADF00587D58 /* Candy.swift */; };
+		94E7EE761AA12ADF00587D58 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E7EE751AA12ADF00587D58 /* Word.swift */; };
 		94E7EE781AA12BF200587D58 /* DictTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,7 @@
 		9425E87F19E5CD330056326D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9425E88019E5CD330056326D /* SwiftManchuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftManchuTests.swift; sourceTree = "<group>"; };
 		94E7EE711AA1281600587D58 /* ManchuDict.SQLite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ManchuDict.SQLite; sourceTree = "<group>"; };
-		94E7EE751AA12ADF00587D58 /* Candy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
+		94E7EE751AA12ADF00587D58 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,12 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				9425E86A19E5CD320056326D /* AppDelegate.swift */,
-				94E7EE751AA12ADF00587D58 /* Candy.swift */,
+				94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */,
+				94E7EE751AA12ADF00587D58 /* Word.swift */,
 				9425E86E19E5CD320056326D /* Main.storyboard */,
 				9425E87119E5CD320056326D /* Images.xcassets */,
 				9425E87319E5CD320056326D /* LaunchScreen.xib */,
 				9425E86819E5CD320056326D /* Supporting Files */,
-				94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */,
 			);
 			path = SwiftManchu;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9425E86B19E5CD320056326D /* AppDelegate.swift in Sources */,
-				94E7EE761AA12ADF00587D58 /* Candy.swift in Sources */,
+				94E7EE761AA12ADF00587D58 /* Word.swift in Sources */,
 				94E7EE781AA12BF200587D58 /* DictTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

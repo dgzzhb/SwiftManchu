@@ -1,5 +1,5 @@
 //
-//  Candy.swift
+//  Entry.swift
 //  SwiftManchu
 //
 //  Created by Tian Zheng on 2/27/15.
@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct Candy {
-    let category : String
-    let name : String
+struct Word {
+    
+    let mnc : String
+    let chn : String
+    
 }
