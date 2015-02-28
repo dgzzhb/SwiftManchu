@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SQLite
 
 class DictTableTableViewController : UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     var candies = [Word]()
@@ -15,16 +16,8 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Sample Data for candyArray
-        self.candies = [Word(category:"Chocolate", name:"chocolate Bar"),
-            Word(category:"Chocolate", name:"chocolate Chip"),
-            Word(category:"Chocolate", name:"dark chocolate"),
-            Word(category:"Hard", name:"lollipop"),
-            Word(category:"Hard", name:"candy cane"),
-            Word(category:"Hard", name:"jaw breaker"),
-            Word(category:"Other", name:"caramel"),
-            Word(category:"Other", name:"sour chew"),
-            Word(category:"Other", name:"gummi bear")]
+        //self.candies = [Word(mnc:"manchu", chn:"满洲")]
+        self.candies = readAllWords()
         
         // Reload the table
         self.tableView.reloadData()
@@ -62,24 +55,24 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
         //ask for a reusable cell from the tableview, the tableview will create a new one if it doesn't have any
         let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
         
-        var candy : Word
+        var word : Word
         // Check to see whether the normal table or search results table is being displayed and set the Candy object from the appropriate array
         if tableView == self.searchDisplayController!.searchResultsTableView {
-            candy = filteredCandies[indexPath.row]
+            word = filteredCandies[indexPath.row]
         } else {
-            candy = candies[indexPath.row]
+            word = candies[indexPath.row]
         }
         
         // Configure the cell
-        cell.textLabel!.text = candy.name
+        cell.textLabel!.text = word.mnc + " " + word.chn
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell
     }
     func filterContentForSearchText(searchText: String) {
         // Filter the array using the filter method
-        self.filteredCandies = self.candies.filter({( candy: Word) -> Bool in
-            let stringMatch = candy.name.rangeOfString(searchText)
+        self.filteredCandies = self.candies.filter({( word: Word) -> Bool in
+            let stringMatch = word.mnc.rangeOfString(searchText)
             return (stringMatch != nil)
         })
     }
@@ -100,18 +93,41 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "wordDetail" {
-            let candyDetailViewController = segue.destinationViewController as UIViewController
+            let wordDetailViewController = segue.destinationViewController as UIViewController
             if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
                 let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
-                let destinationTitle = self.filteredCandies[indexPath.row].name
-                candyDetailViewController.title = destinationTitle
+                let destinationTitle = self.filteredCandies[indexPath.row].mnc
+                wordDetailViewController.title = destinationTitle
             } else {
                 let indexPath = self.tableView.indexPathForSelectedRow()!
-                let destinationTitle = self.candies[indexPath.row].name
-                candyDetailViewController.title = destinationTitle
+                let destinationTitle = self.candies[indexPath.row].mnc
+                wordDetailViewController.title = destinationTitle
             }
         }
     }
+    
+    func readAllWords() -> [Word] {
+        var result : [Word]! = []
+        
+        let path = NSBundle.mainBundle().pathForResource("ManchuDict", ofType: "SQLite")!
+        
+        let db = Database(path, readonly: true)
+        
+        let words = db["Word"]
+        let id = Expression<Int>("id")
+        let mnc = Expression<String>("mnc")
+        let chn = Expression<String>("chn")
+        let eng = Expression<String>("eng")
+        let attr = Expression<String>("attribute")
+        
+        for word in words {
+            let tempWord = Word(id:word[id], mnc:word[mnc], chn:word[chn], eng:word[eng], attr:word[attr])
+            result.append(tempWord)
+        }
+        
+        return result
+    }
+    
     
     /*
     // Override to support conditional editing of the table view.
@@ -145,16 +161,6 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
     }
     */
 

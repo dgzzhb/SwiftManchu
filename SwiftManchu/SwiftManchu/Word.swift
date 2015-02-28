@@ -9,8 +9,18 @@
 import Foundation
 
 struct Word {
-    
+    let id : Int
     let mnc : String
     let chn : String
-    
+    let eng : String
+    let attr : String
+    //let sentences : [Sentence]
+}
+
+struct Sentence {
+    let id : Int
+    let mnc : String
+    let chn : String
+    let eng : String
+    let wordid : Int
 }
