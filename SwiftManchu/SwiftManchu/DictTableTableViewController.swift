@@ -98,6 +98,7 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
             let wordDetailViewController : DetailViewController = segue.destinationViewController as DetailViewController
             if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
                 let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
+                let wordId = self.filteredWords[indexPath.row].id
                 let destinationTitle = self.filteredWords[indexPath.row].mnc
                 let wordChn = self.filteredWords[indexPath.row].chn
                 let wordEng = self.filteredWords[indexPath.row].eng
@@ -107,8 +108,10 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
                 wordDetailViewController.chnText = wordChn
                 wordDetailViewController.engText = wordEng
                 wordDetailViewController.attrText = wordAttr
+                wordDetailViewController.wordid = wordId
             } else {
                 let indexPath = self.tableView.indexPathForSelectedRow()!
+                let wordId = self.words[indexPath.row].id
                 let destinationTitle = self.words[indexPath.row].mnc
                 let wordChn = self.words[indexPath.row].chn
                 let wordEng = self.words[indexPath.row].eng
@@ -118,6 +121,7 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
                 wordDetailViewController.chnText = wordChn
                 wordDetailViewController.engText = wordEng
                 wordDetailViewController.attrText = wordAttr
+                wordDetailViewController.wordid = wordId
             }
         }
     }

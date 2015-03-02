@@ -15,12 +15,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var chnLabel: UILabel!
     @IBOutlet weak var engLabel: UILabel!
     @IBOutlet weak var attrLabel: UILabel!
+    @IBOutlet weak var sentences: UITextView!
     
     var wordid = Int();
     var mncText = String();
     var chnText = String();
     var engText = String();
     var attrText = String();
+    var sentText = String();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +30,21 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         var sents : [Sentence]! = [] // Max 7 Sentence per Word
         sents = readSentences(wordid)
+        for sent in sents {
+            sentText += sent.sentmnc;
+            sentText += "\n";
+            sentText += sent.sentchn;
+            sentText += "\n";
+            sentText += sent.senteng;
+            sentText += "\n";
+            
+        }
         
         mncLabel.text = mncText
         chnLabel.text = chnText
         engLabel.text = engText
         attrLabel.text = attrText
-        
+        sentences.text = sentText
         
     }
 
@@ -55,7 +66,6 @@ class DetailViewController: UIViewController {
             let tempSent = Sentence(sentid:sent[sentid], sentmnc:sent[sentmnc], sentchn:sent[sentchn], senteng:sent[senteng], wordid:sent[wordid])
             result.append(tempSent)
         }
-        
         return result
     }
     
