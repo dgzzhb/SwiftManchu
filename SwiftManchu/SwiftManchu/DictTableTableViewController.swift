@@ -72,10 +72,10 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         self.filteredWords = self.words.filter({( word : Word) -> Bool in
             var mncMatch = word.mnc.rangeOfString(searchText)
-            // Pay - only content
-            // var chnMatch = word.chn.rangeOfString(searchText)
-            // var engMatch = word.eng.rangeOfString(searchText)
-            return (mncMatch != nil)//|| (chnMatch != nil) || (engMatch != nil)
+            // Pay - only content, free for first version
+            var chnMatch = word.chn.rangeOfString(searchText)
+            var engMatch = word.eng.rangeOfString(searchText)
+            return (mncMatch != nil) || (chnMatch != nil) || (engMatch != nil)
         })
     }
     
