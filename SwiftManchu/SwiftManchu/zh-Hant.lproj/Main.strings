@@ -1,0 +1,21 @@
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "70F-9P-HnB"; */
+"70F-9P-HnB.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "AyH-VQ-AxA"; */
+"AyH-VQ-AxA.text" = "Label";
+
+/* Class = "IBUISearchBar"; placeholder = "Search for Word"; ObjectID = "BSx-Wc-DMJ"; */
+"BSx-Wc-DMJ.placeholder" = "搜索單詞";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "LUQ-6u-cF0"; */
+"LUQ-6u-cF0.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "VEj-ek-6GS"; */
+"VEj-ek-6GS.text" = "Label";
+
+/* Class = "IBUINavigationItem"; title = "Manchu Dictionary"; ObjectID = "av7-Nf-J8T"; */
+"av7-Nf-J8T.title" = "滿漢英大詞典;
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "feM-7i-6Mx"; */
+"feM-7i-6Mx.text" = "Label";
