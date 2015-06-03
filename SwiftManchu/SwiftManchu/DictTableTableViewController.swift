@@ -52,7 +52,7 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //ask for a reusable cell from the tableview, the tableview will create a new one if it doesn't have any
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         
         var word : Word
         
@@ -95,8 +95,8 @@ class DictTableTableViewController : UITableViewController, UISearchBarDelegate,
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "wordDetail" {
-            let wordDetailViewController : DetailViewController = segue.destinationViewController as DetailViewController
-            if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
+            let wordDetailViewController : DetailViewController = segue.destinationViewController as! DetailViewController
+            if sender as! UITableView == self.searchDisplayController!.searchResultsTableView {
                 let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
                 let wordId = self.filteredWords[indexPath.row].id
                 let destinationTitle = self.filteredWords[indexPath.row].mnc

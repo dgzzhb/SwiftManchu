@@ -1,0 +1,15 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '8.0'
+
+target 'SwiftManchu' do
+
+use_frameworks!
+pod 'SQLite.swift', git: 'https://github.com/stephencelis/SQLite.swift.git'
+# pod 'SQLite.swift/Cipher', git: ... # instead, for SQLCipher support
+
+end
+
+target 'SwiftManchuTests' do
+
+end
+
