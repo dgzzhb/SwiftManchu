@@ -16,7 +16,7 @@
 		949B4BFD1AA16D7B00A21F0E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B4BFC1AA16D7B00A21F0E /* DetailViewController.swift */; };
 		94E7EE721AA1281600587D58 /* ManchuDict.SQLite in Resources */ = {isa = PBXBuildFile; fileRef = 94E7EE711AA1281600587D58 /* ManchuDict.SQLite */; };
 		94E7EE761AA12ADF00587D58 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E7EE751AA12ADF00587D58 /* Word.swift */; };
-		94E7EE781AA12BF200587D58 /* DictTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */; };
+		94E7EE781AA12BF200587D58 /* DictTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E7EE771AA12BF200587D58 /* DictTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,7 @@
 		94D10BB41ABE9119005A49D6 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		94E7EE711AA1281600587D58 /* ManchuDict.SQLite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ManchuDict.SQLite; sourceTree = "<group>"; };
 		94E7EE751AA12ADF00587D58 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
-		94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictTableTableViewController.swift; sourceTree = "<group>"; };
+		94E7EE771AA12BF200587D58 /* DictTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				9425E86A19E5CD320056326D /* AppDelegate.swift */,
-				94E7EE771AA12BF200587D58 /* DictTableTableViewController.swift */,
+				94E7EE771AA12BF200587D58 /* DictTableViewController.swift */,
 				949B4BFC1AA16D7B00A21F0E /* DetailViewController.swift */,
 				94E7EE751AA12ADF00587D58 /* Word.swift */,
 				9425E86E19E5CD320056326D /* Main.storyboard */,
@@ -365,7 +365,7 @@
 			files = (
 				9425E86B19E5CD320056326D /* AppDelegate.swift in Sources */,
 				94E7EE761AA12ADF00587D58 /* Word.swift in Sources */,
-				94E7EE781AA12BF200587D58 /* DictTableTableViewController.swift in Sources */,
+				94E7EE781AA12BF200587D58 /* DictTableViewController.swift in Sources */,
 				949B4BFD1AA16D7B00A21F0E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

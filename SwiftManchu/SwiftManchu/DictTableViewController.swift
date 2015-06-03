@@ -9,7 +9,7 @@
 import UIKit
 import SQLite
 
-class DictTableTableViewController : UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
+class DictTableViewController : UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     var words = [Word]()
     var filteredWords = [Word]()
 
